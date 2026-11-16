@@ -15543,7 +15543,7 @@ function bc(t, e, n) {
         en: "Next step",
         text: s.length
           ? `可以延伸 ${s.length} 条资源，共享：${[...new Set(s.flatMap((f) => f.via))].slice(0, 4).join("、")}`
-          : "暂未与资源条目共享概念，可补充正文后再看。",
+          : "暂未与项目条目共享概念，可补充正文后再看。",
         items: [r.id, ...s.slice(0, 3).map((f) => f.id)],
       });
     }
@@ -16411,7 +16411,7 @@ function k2(t, e) {
         [
           "数据时点",
           "Snapshot",
-          "资源条目只记录标题、链接、分类与状态，缺失项保留为「—」。",
+          "项目条目只记录标题、链接、分类与状态，缺失项保留为「—」。",
           "muted",
         ],
       ],
@@ -19991,7 +19991,7 @@ function F2({
               (0, N.jsx)("header", {
                 children: (0, N.jsxs)("h2", {
                   children: [
-                    "消化计划 ",
+                    "整理计划 ",
                     (0, N.jsx)("em", { children: "Plan" }),
                   ],
                 }),
@@ -20054,7 +20054,7 @@ function F2({
                     children: [
                       (0, N.jsxs)("h3", {
                         children: [
-                          "待整理的灵感 ",
+                          "待整理的索引 ",
                           (0, N.jsx)("em", { children: "Up next" }),
                         ],
                       }),
@@ -20085,7 +20085,7 @@ function F2({
                 },
                 children: [
                   (0, N.jsx)(X, { name: "draft", size: 15 }),
-                  "去消化 ",
+                  "去整理 ",
                   (0, N.jsx)("em", { children: "Process" }),
                   (0, N.jsx)("span", {
                     children:
@@ -21722,7 +21722,7 @@ function bx(t, e = {}) {
         _ = b.find((D) => D.title === E);
       return {
         id: "draft-" + (S + 1),
-        title: v.title,
+        title: String(jt(v.fm, ["title", "标题", "name", "why"]) || v.title),
         body: Su(v.body),
         source: _ ? _.id : null,
       };

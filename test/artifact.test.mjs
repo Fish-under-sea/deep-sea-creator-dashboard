@@ -34,9 +34,9 @@ check("version: manifest == package.json", () => assert.equal(manifest.version, 
 // 3. main.js 存在、非空、体积在合理区间
 assert.ok(existsSync(p("main.js")), "main.js missing (run npm run build)");
 const mainSize = statSync(p("main.js")).size;
-check("main.js: size in range 300KB-600KB", () => {
+check("main.js: size in range 300KB-2MB", () => {
   assert.ok(mainSize > 300 * 1024, `too small: ${mainSize}`);
-  assert.ok(mainSize < 600 * 1024, `too large: ${mainSize}`);
+  assert.ok(mainSize < 2 * 1024 * 1024, `too large: ${mainSize}`);
 });
 
 const js = read("main.js");

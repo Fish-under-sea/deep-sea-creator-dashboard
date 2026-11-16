@@ -14764,7 +14764,7 @@ var _h = {
     {
       id: "n1",
       title: "观察记录方法",
-      path: "05-方法库 methods/流程/观察记录方法.md",
+      path: "05-知识库 methods/流程/观察记录方法.md",
       body: `# 观察记录方法
 
 虚构演示笔记。先观察并记录问题，再整理材料，使用模板安排实验，最后复盘。
@@ -14774,7 +14774,7 @@ var _h = {
     {
       id: "n2",
       title: "材料整理清单",
-      path: "05-方法库 methods/模板/材料整理清单.md",
+      path: "05-知识库 methods/模板/材料整理清单.md",
       body: `# 材料整理清单
 
 虚构演示笔记。先观察并记录问题，再整理材料，使用模板安排实验，最后复盘。
@@ -14784,7 +14784,7 @@ var _h = {
     {
       id: "n3",
       title: "实验计划模板",
-      path: "05-方法库 methods/流程/实验计划模板.md",
+      path: "05-知识库 methods/流程/实验计划模板.md",
       body: `# 实验计划模板
 
 虚构演示笔记。先观察并记录问题，再整理材料，使用模板安排实验，最后复盘。
@@ -14794,7 +14794,7 @@ var _h = {
     {
       id: "n4",
       title: "展示页面模板",
-      path: "05-方法库 methods/模板/展示页面模板.md",
+      path: "05-知识库 methods/模板/展示页面模板.md",
       body: `# 展示页面模板
 
 虚构演示笔记。先观察并记录问题，再整理材料，使用模板安排实验，最后复盘。
@@ -14804,7 +14804,7 @@ var _h = {
     {
       id: "n5",
       title: "每周回顾流程",
-      path: "05-方法库 methods/流程/每周回顾流程.md",
+      path: "05-知识库 methods/流程/每周回顾流程.md",
       body: `# 每周回顾流程
 
 虚构演示笔记。先观察并记录问题，再整理材料，使用模板安排实验，最后复盘。
@@ -14814,7 +14814,7 @@ var _h = {
     {
       id: "n6",
       title: "灵感归档规则",
-      path: "05-方法库 methods/模板/灵感归档规则.md",
+      path: "05-知识库 methods/模板/灵感归档规则.md",
       body: `# 灵感归档规则
 
 虚构演示笔记。先观察并记录问题，再整理材料，使用模板安排实验，最后复盘。
@@ -14861,13 +14861,13 @@ var _h = {
       id: "draft-1",
       title: "记录一周的光影",
       source: 4,
-      body: "【虚构演示待消化条目】按照 [[观察记录方法]] 收集不同时间的光影，再用 [[展示页面模板]] 组织内容。",
+      body: "【虚构演示记忆库条目】按照 [[观察记录方法]] 收集不同时间的光影，再用 [[展示页面模板]] 组织内容。",
     },
     {
       id: "draft-2",
       title: "我的材料实验册",
       source: null,
-      body: "【虚构演示待消化条目】用 [[材料整理清单]] 记录纸张与布料，参考 [[每周回顾流程]] 复盘。",
+      body: "【虚构演示记忆库条目】用 [[材料整理清单]] 记录纸张与布料，参考 [[每周回顾流程]] 复盘。",
     },
   ],
   Uh = [
@@ -15002,7 +15002,7 @@ var gt = {
     post: { label: "资源", en: "Resource", color: L.kinds.post },
     note: { label: "方法笔记", en: "Method note", color: L.kinds.note },
     idea: { label: "灵感", en: "Spark", color: L.kinds.idea },
-    draft: { label: "待消化", en: "Inbox", color: L.kinds.draft },
+    draft: { label: "记忆库", en: "Memories", color: L.kinds.draft },
     concept: { label: "概念", en: "Concept", color: L.kinds.concept },
     tag: { label: "话题", en: "Topic", color: L.kinds.tag },
     ghost: { label: "未创建", en: "Unresolved", color: L.kinds.ghost },
@@ -15119,7 +15119,7 @@ function Qh({ ideas: t = [], drafts: e = [] } = {}) {
       kind: "post",
       title: p.title,
       short: p.title.replace(/^Obsidian[：:]/, ""),
-      path: "02-资源库/" + p.title,
+      path: "02-项目库/" + p.title,
       folder: "f:works",
       text:
         p.title +
@@ -15170,7 +15170,7 @@ function Qh({ ideas: t = [], drafts: e = [] } = {}) {
       kind: "idea",
       title: p.title || "未命名灵感",
       short: p.title,
-      path: "04-灵感库/" + p.title,
+      path: "04-索引库/" + p.title,
       folder: "f:ideas",
       text:
         p.title +
@@ -15186,7 +15186,7 @@ function Qh({ ideas: t = [], drafts: e = [] } = {}) {
       kind: "draft",
       title: p.title || "未命名条目",
       short: p.title,
-      path: "03-待消化/" + p.title,
+      path: "03-记忆库/" + p.title,
       folder: "f:drafts",
       text:
         p.title +
@@ -15493,7 +15493,7 @@ function bc(t, e, n) {
       tone: "gold",
       title: "双向连接",
       en: "Bidirectional",
-      text: `共 ${r.length} 组：正文共同提及 ≥2 个概念，或灵感与待消化条目互相记录。`,
+      text: `共 ${r.length} 组：正文共同提及 ≥2 个概念，或灵感与记忆库条目互相记录。`,
       pairs: r
         .slice(0, 8)
         .map((s) => [
@@ -16470,11 +16470,11 @@ function k2(t, e) {
       status: `${e.idea.status} · ${e.idea.platform}`,
       action: x
         ? [
-            "打开待消化条目",
-            "Open inbox item",
+            "打开记忆库条目",
+            "Open memory item",
             { type: "ideaToDraft", idea: e.idea },
           ]
-        : ["加入待消化", "To inbox", { type: "ideaToDraft", idea: e.idea }],
+        : ["加入记忆库", "To memories", { type: "ideaToDraft", idea: e.idea }],
       action2: ["编辑灵感", "Edit", { type: "editIdea", idea: e.idea }],
       metric: {
         label: "延伸潜力",
@@ -16493,9 +16493,9 @@ function k2(t, e) {
       },
       tiles: [
         ["concept", e.shared.length, "提及概念", "Concepts"],
-        ["works", h.length, "关联资源", "Resources"],
+        ["works", h.length, "关联项目", "Projects"],
         ["methods", y, "关联笔记", "Notes"],
-        ["draft", x ? 1 : 0, "待消化", "Inbox"],
+        ["draft", x ? 1 : 0, "记忆库", "Memories"],
       ],
       insights: [
         ["灵感备注", "Brief", e.idea.note || "还没有备注。", "info"],
@@ -16550,7 +16550,7 @@ function k2(t, e) {
           "Concepts",
           e.shared.length
             ? e.shared.join("、")
-            : "正文还没有命中概念词，可以在待消化里用 [[ ]] 链接笔记。",
+            : "正文还没有命中概念词，可以在记忆库里用 [[ ]] 链接笔记。",
           "info",
         ],
       ],
@@ -16594,10 +16594,10 @@ function k2(t, e) {
         .map((p) => ({ v: p.in, on: p === e, label: p.title })),
     },
     tiles: [
-      ["works", f("post"), "资源", "Resources"],
+      ["works", f("post"), "资源", "Projects"],
       ["methods", f("note"), "方法笔记", "Notes"],
-      ["idea", f("idea"), "灵感", "Sparks"],
-      ["draft", f("draft"), "待消化", "Inbox"],
+      ["idea", f("idea"), "灵感", "Index"],
+      ["draft", f("draft"), "记忆库", "Memories"],
     ],
     insights: [
       [
@@ -18192,7 +18192,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
     M = new Set(nn.map((h) => l1(t.index.get("post:" + h.id))).filter(Boolean)),
     p = nn.filter((h) => r(h, "待读")).length,
     d = [
-      ["资源总数", "Resources", nn.length],
+      ["项目总数", "Projects", nn.length],
       ["分类数", "Categories", M.size],
       ["本月新增", "Added", w],
       ["待读", "To read", p],
@@ -18242,7 +18242,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
                       (0, z.jsx)("input", {
                         value: i,
                         onChange: (h) => u(h.target.value),
-                        placeholder: "搜索资源… Search resources",
+                        placeholder: "搜索项目… Search projects",
                         "aria-label": "搜索资源",
                       }),
                     ],
@@ -18596,7 +18596,7 @@ function c1({
           onClick: () => i(),
           children: [
             (0, z.jsx)(X, { name: "plus", size: 15 }),
-            "添加待消化 ",
+            "添加记忆库 ",
             (0, z.jsx)("em", { children: "Add" }),
           ],
         }),
@@ -18609,8 +18609,8 @@ function c1({
             children: [
               (0, z.jsxs)("h3", {
                 children: [
-                  "待消化清单 ",
-                  (0, z.jsx)("em", { children: "Inbox" }),
+                  "记忆库清单 ",
+                  (0, z.jsx)("em", { children: "Memories" }),
                   (0, z.jsx)("b", { children: e.length }),
                 ],
               }),
@@ -18663,7 +18663,7 @@ function c1({
                     children: [
                       (0, z.jsxs)("span", {
                         children: [
-                          "03-待消化 / 待处理 ",
+                          "03-记忆库 / 待处理 ",
                           (0, z.jsx)("em", { children: "To process" }),
                         ],
                       }),
@@ -18680,8 +18680,8 @@ function c1({
                     className: "editor-title",
                     value: c.title,
                     onChange: (x) => w("title", x.target.value),
-                    placeholder: "这条待消化是什么 Title",
-                    "aria-label": "待消化标题",
+                    placeholder: "这条记忆库是什么 Title",
+                    "aria-label": "记忆库标题",
                   }),
                   (0, z.jsxs)("div", {
                     className: "editor-area",
@@ -18689,7 +18689,7 @@ function c1({
                       (0, z.jsx)("textarea", {
                         ref: r,
                         value: c.body,
-                        "aria-label": "待消化正文",
+                        "aria-label": "记忆库正文",
                         placeholder:
                           "记点什么… 输入 [[ 链接到其他笔记 Type [[ to link a note",
                         onChange: (x) => {
@@ -18796,7 +18796,7 @@ function c1({
                 className: "editor glass empty",
                 children: (0, z.jsxs)("p", {
                   children: [
-                    "添加一条待消化，在右侧记下要点 ",
+                    "添加一条记忆库，在右侧记下要点 ",
                     (0, z.jsx)("em", { children: "Add an item to begin" }),
                   ],
                 }),
@@ -18940,8 +18940,8 @@ function r1({ graph: t, ideas: e, onEdit: n, onNew: a, onGraph: l }) {
           onClick: a,
           children: [
             (0, z.jsx)(X, { name: "plus", size: 15 }),
-            "记一条灵感 ",
-            (0, z.jsx)("em", { children: "New spark" }),
+            "新建索引 ",
+            (0, z.jsx)("em", { children: "New index" }),
           ],
         }),
       }),
@@ -19037,7 +19037,7 @@ function r1({ graph: t, ideas: e, onEdit: n, onNew: a, onGraph: l }) {
                                 })
                               : (0, z.jsxs)(z.Fragment, {
                                   children: [
-                                    "暂无关联资源 ",
+                                    "暂无关联项目 ",
                                     (0, z.jsx)("em", {
                                       children: "No related resources",
                                     }),
@@ -19489,7 +19489,7 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .empty { display: grid; justify-items: center; gap: 10px; padding: 48px 0; }
 .neural .empty-line { margin: 10px 2px; font-size: 12px; }
 
-/* 作品库 */
+/* 项目库 */
 .neural .page-library .kpi-band { margin-top: 0; }
 .neural .library-layout { display: grid; grid-template-columns: 1fr clamp(380px, 32vw, 460px); gap: 20px; align-items: start; }
 .neural .library-analysis { position: sticky; top: 80px; height: calc(100vh - 100px); height: calc(100dvh - 100px); animation: nd-slideIn .6s cubic-bezier(.2, .8, .2, 1) both; }
@@ -19795,9 +19795,9 @@ function Nc({ title: t, en: e, onClose: n, children: a, wide: l }) {
 }
 var b1 = [
     ["home", "工作台", "Workspace"],
-    ["library", "资源库", "Resources"],
-    ["drafts", "待消化", "Inbox"],
-    ["ideas", "灵感库", "Sparks"],
+    ["library", "项目库", "Projects"],
+    ["drafts", "记忆库", "Memories"],
+    ["ideas", "索引库", "Index"],
   ],
   $2 = {
     current: () => location.hash.slice(1),
@@ -19831,10 +19831,10 @@ function F2({
   var r;
   let o = Jn.filter((s) => s.views === 0 && s.saves === 0).length,
     c = [
-      ["资源总数", "Resources", Jn.length],
+      ["项目总数", "Projects", Jn.length],
       ["本月新增", "Added", ui.length],
       ["待读", "To read", o],
-      ["灵感 · 待消化", "Sparks", n.length + a.length],
+      ["索引 · 记忆库", "Index", n.length + a.length],
     ];
   return (0, N.jsxs)("section", {
     className: "snapshot",
@@ -19900,7 +19900,7 @@ function F2({
                     onClick: u,
                     children: [
                       "全部资源 ",
-                      (0, N.jsx)("em", { children: "All resources" }),
+                      (0, N.jsx)("em", { children: "All projects" }),
                       (0, N.jsx)(X, { name: "arrow", size: 14 }),
                     ],
                   }),
@@ -20090,7 +20090,7 @@ function F2({
                   (0, N.jsx)("span", {
                     children:
                       ((r = a[0]) == null ? void 0 : r.title) ||
-                      "待消化清单是空的",
+                      "记忆库清单是空的",
                   }),
                   (0, N.jsx)(X, { name: "arrow", size: 15 }),
                 ],
@@ -20146,7 +20146,7 @@ function wc() {
       r(Y),
       e("drafts"),
       M(null),
-      x("已加入待消化，只保存在此浏览器 · Saved locally"));
+      x("已加入记忆库，只保存在此浏览器 · Saved locally"));
   }
   function F(k) {
     (d({ ...k }), M("idea"));
@@ -20167,7 +20167,7 @@ function wc() {
       (r(B.id),
         e("drafts"),
         M(null),
-        x("已打开关联的待消化条目 · Linked item opened"));
+        x("已打开关联的记忆库条目 · Linked item opened"));
       return;
     }
     let U = { ...k, status: "进行中" };
@@ -20178,7 +20178,7 @@ function wc() {
     ),
       R(
         U.title,
-        `【根据灵感创建的待消化条目，未调用 AI】
+        `【根据灵感创建的记忆库条目，未调用 AI】
 
 方向：${U.note}
 
@@ -20202,7 +20202,7 @@ function wc() {
     let U = u.filter((I) => I.id !== k);
     (o(U),
       r((Y = U[0]) == null ? void 0 : Y.id),
-      x("已从待消化移除 · Removed"));
+      x("已从记忆库移除 · Removed"));
   }
   let Ue = (0, st.useCallback)(
       (k) => {
@@ -20304,7 +20304,7 @@ function wc() {
                 onClick: () => R(),
                 children: [
                   (0, N.jsx)(X, { name: "plus", size: 14 }),
-                  "加待消化 ",
+                  "加记忆库 ",
                   (0, N.jsx)("em", { children: "Add" }),
                 ],
               }),
@@ -20483,7 +20483,7 @@ function wc() {
                   (0, N.jsxs)("li", {
                     children: [
                       (0, N.jsx)("b", { children: "[[双链]] Wikilinks" }),
-                      "：方法库笔记与待消化条目正文中的双链；找不到对应笔记的记为「未创建」。",
+                      "：知识库笔记与记忆库条目正文中的双链；找不到对应笔记的记为「未创建」。",
                     ],
                   }),
                   (0, N.jsxs)("li", {
@@ -20501,20 +20501,20 @@ function wc() {
                   (0, N.jsxs)("li", {
                     children: [
                       (0, N.jsx)("b", { children: "双向共振 Resonance" }),
-                      "：两条内容共同提及 ≥2 个概念，或灵感与待消化条目互相记录。",
+                      "：两条内容共同提及 ≥2 个概念，或灵感与记忆库条目互相记录。",
                     ],
                   }),
                   (0, N.jsxs)("li", {
                     children: [
                       (0, N.jsx)("b", { children: "灵感来源 Source" }),
-                      "：待消化条目记录来源灵感；灵感状态为「进行中」时反向成立。",
+                      "：记忆库条目记录来源灵感；灵感状态为「进行中」时反向成立。",
                     ],
                   }),
                 ],
               }),
               (0, N.jsxs)("p", {
                 children: [
-                  "资源库：",
+                  "项目库：",
                   Jn.length,
                   " 条",
                   al
@@ -20544,7 +20544,7 @@ function wc() {
               (0, N.jsxs)("p", {
                 className: "quiet",
                 children: [
-                  "图谱分析是本地规则检索，未调用 AI。灵感、待消化与目标保存在当前浏览器，不写入 Obsidian、不发布到平台。",
+                  "图谱分析是本地规则检索，未调用 AI。灵感、记忆库与目标保存在当前浏览器，不写入 Obsidian、不发布到平台。",
                   (0, N.jsx)("em", {
                     children:
                       "Local rules only · no AI · nothing is published.",
@@ -20709,13 +20709,13 @@ function wc() {
                     children: [
                       (0, N.jsx)(X, { name: "draft", size: 14 }),
                       u.some((k) => k.source === p.id)
-                        ? "打开待消化条目"
-                        : "加入待消化",
+                        ? "打开记忆库条目"
+                        : "加入记忆库",
                       " ",
                       (0, N.jsx)("em", {
                         children: u.some((k) => k.source === p.id)
                           ? "Open item"
-                          : "To inbox",
+                          : "To memories",
                       }),
                     ],
                   }),
@@ -20723,7 +20723,7 @@ function wc() {
               }),
               (0, N.jsx)("p", {
                 className: "quiet",
-                children: "加入待消化只生成本地条目，不模拟 AI 生成结果。",
+                children: "加入记忆库只生成本地条目，不模拟 AI 生成结果。",
               }),
             ],
           }),
@@ -21422,7 +21422,7 @@ var dx = [
     ],
     [
       "drafts",
-      /(草稿|创作台|drafts?$|正在写|写作中|待消化|待读|inbox|memories?|记忆)/i,
+      /(草稿|创作台|drafts?$|正在写|写作中|记忆库|待读|inbox|memories?|记忆)/i,
     ],
     ["ideas", /(选题|ideas?$|灵感|sparks?$|点子|indexes?|router|索引)/i],
     [
@@ -21674,7 +21674,7 @@ function bx(t, e = {}) {
       return {
         id: "n" + (S + 1),
         title: v.title,
-        path: `05-方法库 methods/${_}/${E[E.length - 1]}`,
+        path: `05-知识库 methods/${_}/${E[E.length - 1]}`,
         body: Su(v.body),
       };
     }),

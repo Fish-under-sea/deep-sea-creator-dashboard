@@ -20854,7 +20854,8 @@ function w1(t) {
       name: "打开潮汐创作台 Open neural dashboard",
       callback: () => S1(t),
     }),
-    t.addRibbonIcon("network", "潮汐创作台 Neural dashboard", () => S1(t)));
+    t.addRibbonIcon("network", "潮汐创作台 Neural dashboard", () => S1(t)),
+    t.addRibbonIcon("maximize", "全屏潮汐创作台 Full-screen dashboard", () => S2(t)));
 }
 async function S1(t) {
   let e = t.app.workspace.getLeavesOfType(Ec),
@@ -20867,6 +20868,16 @@ async function S1(t) {
     t.app.workspace.revealLeaf(n),
     n
   );
+}
+async function S2(t) {
+  let e = await S1(t);
+  try {
+    t.app.workspace.leftSplit && t.app.workspace.leftSplit.collapse();
+    t.app.workspace.rightSplit && t.app.workspace.rightSplit.collapse();
+  } catch (n) {
+    console.error("[neural-dashboard] 最大化失败：", n);
+  }
+  return e;
 }
 var ci = require("obsidian");
 var ed = 2,

@@ -20842,8 +20842,7 @@ function w1(t) {
       name: "打开潮汐创作台 Open neural dashboard",
       callback: () => S1(t),
     }),
-    t.addRibbonIcon("network", "潮汐创作台 Neural dashboard", () => S1(t)),
-    t.addRibbonIcon("maximize", "全屏潮汐创作台 Full-screen dashboard", () => S2(t)));
+    t.addRibbonIcon("maximize", "潮汐创作台（展开/收起）Toggle dashboard", () => S2(t)));
 }
 async function S1(t) {
   let e = t.app.workspace.getLeavesOfType(Ec),
@@ -20858,14 +20857,36 @@ async function S1(t) {
   );
 }
 async function S2(t) {
-  let e = await S1(t);
-  try {
-    t.app.workspace.leftSplit && t.app.workspace.leftSplit.collapse();
-    t.app.workspace.rightSplit && t.app.workspace.rightSplit.collapse();
-  } catch (n) {
-    console.error("[neural-dashboard] 最大化失败：", n);
+  let ws = t.app.workspace,
+    leaves = ws.getLeavesOfType(Ec),
+    expandSide = (s) => {
+      try {
+        if (!s) return;
+        if (typeof s.expand === "function") s.expand();
+        else if ("collapsed" in s) s.collapsed = false;
+      } catch (e) {}
+    },
+    collapseSide = (s) => {
+      try {
+        if (!s) return;
+        if (typeof s.collapse === "function") s.collapse();
+        else if ("collapsed" in s) s.collapsed = true;
+      } catch (e) {}
+    };
+  if (leaves.length) {
+    expandSide(ws.leftSplit);
+    expandSide(ws.rightSplit);
+    for (let leaf of leaves) {
+      try {
+        leaf.detach && leaf.detach();
+      } catch (e) {}
+    }
+    return null;
   }
-  return e;
+  let view = await S1(t);
+  collapseSide(ws.leftSplit);
+  collapseSide(ws.rightSplit);
+  return view;
 }
 var ci = require("obsidian");
 var ed = 2,

@@ -21440,7 +21440,7 @@ async function Tc(t, e = {}) {
 var dx = [
     [
       "works",
-      /(作品|works?$|published|已发布|资源|resources?$|链接|书签|bookmarks?$|projects?$|项目|inspirations?)/i,
+      /(作品|works?$|published|已发布|资源|resources?$|链接|书签|bookmarks?$|inspirations?)/i,
     ],
     [
       "drafts",

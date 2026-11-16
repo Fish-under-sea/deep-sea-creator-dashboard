@@ -1,0 +1,12 @@
+# 运行时用户数据，不随仓库分发
+data.json
+
+# 依赖与构建
+node_modules/
+*.log
+
+# 系统/编辑器
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

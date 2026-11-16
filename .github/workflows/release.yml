@@ -1,0 +1,41 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Build (esbuild)
+        run: npm run build
+      - name: Artifact tests
+        run: npm test
+      - name: Package install folder + zip
+        run: |
+          set -e
+          mkdir -p dist/deep-sea-creator-dashboard
+          cp manifest.json main.js avatar.svg dist/deep-sea-creator-dashboard/
+          cp -r assets dist/deep-sea-creator-dashboard/
+          cd dist
+          zip -r "../deep-sea-creator-dashboard-${GITHUB_REF_NAME}.zip" deep-sea-creator-dashboard
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: "潮汐创作台 ${{ github.ref_name }}"
+          generate_release_notes: true
+          files: |
+            main.js
+            manifest.json
+            deep-sea-creator-dashboard-${{ github.ref_name }}.zip

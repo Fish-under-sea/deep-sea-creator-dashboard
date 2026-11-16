@@ -1,7 +1,7 @@
 {
   "id": "deep-sea-creator-dashboard",
   "name": "潮汐创作台",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "minAppVersion": "1.5.0",
   "description": "在 Obsidian 内把作品、方法笔记、选题与草稿推导成一张神经网络图谱：独立视图与笔记内代码块两种形态，数据源直接读取当前 vault 的笔记。",
   "author": "fish-under-sea",

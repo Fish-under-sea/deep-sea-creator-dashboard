@@ -15025,7 +15025,7 @@ var gt = {
   },
   Ce = new Set(["post", "note", "idea", "draft"]),
   Lh = [
-    { id: "f:works", title: "项目库", path: "02-项目库", angle: 180 },
+    { id: "f:works", title: "灵感库", path: "02-灵感库", angle: 180 },
     { id: "f:drafts", title: "记忆库", path: "03-记忆库", angle: 145 },
     { id: "f:ideas", title: "索引库", path: "04-索引库", angle: 35 },
     { id: "f:methods", title: "知识库", path: "05-知识库 wiki", angle: 0 },
@@ -15033,8 +15033,8 @@ var gt = {
   _t = [
     {
       id: "works",
-      title: "项目库",
-      en: "Projects",
+      title: "灵感库",
+      en: "Inspirations",
       kind: "post",
       folder: "f:works",
       angle: 180,
@@ -15119,7 +15119,7 @@ function Qh({ ideas: t = [], drafts: e = [] } = {}) {
       kind: "post",
       title: p.title,
       short: p.title.replace(/^Obsidian[：:]/, ""),
-      path: "02-项目库/" + p.title,
+      path: "02-灵感库/" + p.title,
       folder: "f:works",
       text:
         p.title +
@@ -16828,7 +16828,7 @@ function e1(t, e) {
 function R2(t, e) {
   let n = e1(t, e.id),
     a = {
-      works: () => [n.length, "个项目", "projects"],
+      works: () => [n.length, "个灵感", "inspirations"],
       concepts: () => [Qf(n.reduce((l, i) => l + i.in, 0)), "提及", "mentions"],
       methods: () => [n.length, "篇笔记", "notes"],
       ideas: () => [n.length, "页", "pages"],
@@ -18192,7 +18192,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
     M = new Set(nn.map((h) => l1(t.index.get("post:" + h.id))).filter(Boolean)),
     p = nn.filter((h) => r(h, "待读")).length,
     d = [
-      ["项目总数", "Projects", nn.length],
+      ["灵感总数", "Projects", nn.length],
       ["分类数", "Categories", M.size],
       ["本月新增", "Added", w],
       ["待读", "To read", p],
@@ -18201,11 +18201,11 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
     className: "page page-library",
     children: [
       (0, z.jsx)(Kf, {
-        zh: "项目库",
-        en: "Projects",
-        sub: "收录的项目卡，都在这里。",
+        zh: "灵感库",
+        en: "Inspirations",
+        sub: "记下灵感，日后在这里生长。",
         subEn:
-          "Project cards you collected, with status and connections.",
+          "Inspirations you captured, organized with status and connections.",
       }),
       (0, z.jsx)("section", {
         className: "kpi-band glass",
@@ -19490,7 +19490,7 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .empty { display: grid; justify-items: center; gap: 10px; padding: 48px 0; }
 .neural .empty-line { margin: 10px 2px; font-size: 12px; }
 
-/* 项目库 */
+/* 灵感库 */
 .neural .page-library .kpi-band { margin-top: 0; }
 .neural .library-layout { display: grid; grid-template-columns: 1fr clamp(380px, 32vw, 460px); gap: 20px; align-items: start; }
 .neural .library-analysis { position: sticky; top: 80px; height: calc(100vh - 100px); height: calc(100dvh - 100px); animation: nd-slideIn .6s cubic-bezier(.2, .8, .2, 1) both; }
@@ -19796,7 +19796,7 @@ function Nc({ title: t, en: e, onClose: n, children: a, wide: l }) {
 }
 var b1 = [
     ["home", "工作台", "Workspace"],
-    ["library", "项目库", "Projects"],
+    ["library", "灵感库", "Inspirations"],
     ["drafts", "记忆库", "Memories"],
     ["ideas", "索引库", "Index"],
   ],
@@ -19832,7 +19832,7 @@ function F2({
   var r;
   let o = Jn.filter((s) => s.views === 0 && s.saves === 0).length,
     c = [
-      ["项目总数", "Projects", Jn.length],
+      ["灵感总数", "Projects", Jn.length],
       ["本月新增", "Added", ui.length],
       ["待读", "To read", o],
       ["索引 · 记忆库", "Index", n.length + a.length],
@@ -20515,7 +20515,7 @@ function wc() {
               }),
               (0, N.jsxs)("p", {
                 children: [
-                  "项目库：",
+                  "灵感库：",
                   Jn.length,
                   " 条",
                   al
@@ -21440,7 +21440,7 @@ async function Tc(t, e = {}) {
 var dx = [
     [
       "works",
-      /(作品|works?$|published|已发布|资源|resources?$|链接|书签|bookmarks?$|projects?$|项目)/i,
+      /(作品|works?$|published|已发布|资源|resources?$|链接|书签|bookmarks?$|projects?$|项目|inspirations?)/i,
     ],
     [
       "drafts",

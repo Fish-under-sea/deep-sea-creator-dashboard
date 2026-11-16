@@ -1,6 +1,6 @@
 {
   "name": "deep-sea-creator-dashboard",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "潮汐创作台：在 Obsidian 中把作品、方法笔记、选题与草稿推导成一张神经网络图谱的创作看板（luoluo-121/neural-creator-dashboard 的插件化衍生）。",
   "private": true,
   "license": "PolyForm-Noncommercial-1.0.0",

@@ -15025,16 +15025,16 @@ var gt = {
   },
   Ce = new Set(["post", "note", "idea", "draft"]),
   Lh = [
-    { id: "f:works", title: "资源库", path: "02-资源库", angle: 180 },
-    { id: "f:drafts", title: "待消化", path: "03-待消化", angle: 145 },
-    { id: "f:ideas", title: "灵感库", path: "04-灵感库", angle: 35 },
-    { id: "f:methods", title: "方法库", path: "05-方法库 methods", angle: 0 },
+    { id: "f:works", title: "项目库", path: "02-项目库", angle: 180 },
+    { id: "f:drafts", title: "记忆库", path: "03-记忆库", angle: 145 },
+    { id: "f:ideas", title: "索引库", path: "04-索引库", angle: 35 },
+    { id: "f:methods", title: "知识库", path: "05-知识库 wiki", angle: 0 },
   ],
   _t = [
     {
       id: "works",
-      title: "资源库",
-      en: "Resources",
+      title: "项目库",
+      en: "Projects",
       kind: "post",
       folder: "f:works",
       angle: 180,
@@ -15051,8 +15051,8 @@ var gt = {
     },
     {
       id: "methods",
-      title: "方法库",
-      en: "Methods",
+      title: "知识库",
+      en: "Wiki",
       kind: "note",
       folder: "f:methods",
       angle: 0,
@@ -15060,8 +15060,8 @@ var gt = {
     },
     {
       id: "ideas",
-      title: "灵感库",
-      en: "Sparks",
+      title: "索引库",
+      en: "Index",
       kind: "idea",
       folder: "f:ideas",
       angle: 35,
@@ -15070,8 +15070,8 @@ var gt = {
     },
     {
       id: "drafts",
-      title: "待消化",
-      en: "Inbox",
+      title: "记忆库",
+      en: "Memories",
       kind: "draft",
       folder: "f:drafts",
       angle: 145,
@@ -16828,23 +16828,11 @@ function e1(t, e) {
 function R2(t, e) {
   let n = e1(t, e.id),
     a = {
-      works: () => [n.length, "条", "saved"],
+      works: () => [n.length, "个项目", "projects"],
       concepts: () => [Qf(n.reduce((l, i) => l + i.in, 0)), "提及", "mentions"],
-      methods: () => [
-        t.links.filter((l) => l.kind === "wiki").length,
-        "双链",
-        "wikilinks",
-      ],
-      ideas: () => [
-        n.filter((l) => !["已归档"].includes(l.idea.status)).length,
-        "待整理",
-        "to sort",
-      ],
-      drafts: () => [
-        Qf(n.reduce((l, i) => l + (i.body || "").length, 0)),
-        "字",
-        "chars",
-      ],
+      methods: () => [n.length, "篇笔记", "notes"],
+      ideas: () => [n.length, "页", "pages"],
+      drafts: () => [n.length, "条记忆", "memories"],
     }[e.id]();
   return { count: n.length, sub: a };
 }
@@ -18213,11 +18201,11 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
     className: "page page-library",
     children: [
       (0, z.jsx)(Kf, {
-        zh: "资源库",
-        en: "Resources",
-        sub: "收藏过的链接，都会回来找你。",
+        zh: "项目库",
+        en: "Projects",
+        sub: "收录的项目卡，都在这里。",
         subEn:
-          "Every link you saved, with its category, read state and connections.",
+          "Project cards you collected, with status and connections.",
       }),
       (0, z.jsx)("section", {
         className: "kpi-band glass",
@@ -18598,11 +18586,11 @@ function c1({
     className: "page page-drafts",
     children: [
       (0, z.jsx)(Kf, {
-        zh: "待消化",
-        en: "Inbox",
-        sub: "还没读的，先放这里。",
+        zh: "记忆库",
+        en: "Memories",
+        sub: "沉淀下来的经验与记忆。",
         subEn:
-          "Things to read or process — write with [[links]] to grow the graph.",
+          "Stored experiences and memories of this vault.",
         children: (0, z.jsxs)("button", {
           className: "pill primary",
           onClick: () => i(),
@@ -18942,11 +18930,11 @@ function r1({ graph: t, ideas: e, onEdit: n, onNew: a, onGraph: l }) {
     className: "page page-ideas",
     children: [
       (0, z.jsx)(Kf, {
-        zh: "灵感库",
-        en: "Sparks",
-        sub: "随手记的，都是种子。",
+        zh: "索引库",
+        en: "Index",
+        sub: "库里的导航与路由页。",
         subEn:
-          "Ideas you jotted down, linked to what you have already collected.",
+          "Index and routing pages of this vault.",
         children: (0, z.jsxs)("button", {
           className: "pill primary",
           onClick: a,
@@ -21430,16 +21418,19 @@ async function Tc(t, e = {}) {
 var dx = [
     [
       "works",
-      /(作品|works?$|published|已发布|资源|resources?$|链接|书签|bookmarks?$)/i,
+      /(作品|works?$|published|已发布|资源|resources?$|链接|书签|bookmarks?$|projects?$|项目)/i,
     ],
-    ["drafts", /(草稿|创作台|drafts?$|正在写|写作中|待消化|待读|inbox)/i],
-    ["ideas", /(选题|ideas?$|灵感|sparks?$|点子)/i],
+    [
+      "drafts",
+      /(草稿|创作台|drafts?$|正在写|写作中|待消化|待读|inbox|memories?|记忆)/i,
+    ],
+    ["ideas", /(选题|ideas?$|灵感|sparks?$|点子|indexes?|router|索引)/i],
     [
       "methods",
-      /(方法|methods?$|模板|templates?$|流程|workflow|知识|卡片|notes?$)/i,
+      /(方法|methods?$|模板|templates?$|流程|workflow|知识|卡片|notes?$|wiki)/i,
     ],
   ],
-  px = [".git", ".workflow", ".obsidian", ".trash", "node_modules"],
+  px = [".git", ".workflow", ".obsidian", ".trash", "node_modules", "candidate-pool.md", "rejection-log.md", "agent-router.md", "maintenance-log.md"],
   mx = [".ghcr-source"];
 function fd(t) {
   return String(t || "")

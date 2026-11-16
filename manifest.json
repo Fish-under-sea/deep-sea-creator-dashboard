@@ -1,7 +1,7 @@
 {
   "id": "deep-sea-creator-dashboard",
   "name": "潮汐创作台",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "minAppVersion": "1.5.0",
   "description": "把作品、方法笔记、选题与草稿推导成一张可交互的神经网络图谱，支持独立视图与笔记内代码块两种形态，数据直接读取当前 vault。",
   "author": "fish-under-sea",

@@ -191,7 +191,8 @@ Error generating stack: `+t.message+`
 .neural .eyebrow { margin: 0 0 10px; font-size: 11px; letter-spacing: .22em; color: #e6cf98; font-weight: 600; }
 .neural .eyebrow span { letter-spacing: .1em; color: var(--text-2); margin-left: 8px; font-weight: 400; }
 .neural .quiet { color: var(--muted); font-size: 12px; }
-.neural .icon-btn { display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); color: var(--text-2); }
+.neural .icon-btn { position: relative; display: grid; place-items: center; padding: 0; line-height: 0; width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); color: var(--text-2); }
+.neural .icon-btn > svg { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: block; }
 .neural .icon-btn:hover { color: var(--text); border-color: var(--line-2); }
 
 /* —— 顶栏 —— */

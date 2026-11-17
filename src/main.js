@@ -19483,6 +19483,8 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 18px; }
 .neural .qr-import-btn { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255, 255, 255, .04); color: var(--text); font-size: 13px; cursor: pointer; }
 .neural .qr-import-btn:hover { background: rgba(255, 255, 255, .09); }
+.neural-view { height: 100%; }
+.neural-view .neural { min-height: 100%; }
 .neural .page-head h1 { margin: 0; font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: .02em; }
 .neural .page-sub { margin: 6px 0 0; color: var(--text-2); font-size: 13.5px; }
 .neural .toolbar-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
@@ -20832,6 +20834,7 @@ var Ec = "neural-dashboard-view",
       } catch (e) {
         console.error("[neural-dashboard] vault 扫描失败：", e);
       }
+      this.contentEl.classList.add("neural-view");
       return zc(this.contentEl, this.plugin.mountContext());
     }
     async onClose() {
@@ -22226,13 +22229,16 @@ async function __tideOpen(app) {
   var url = "http://" + st.ip + ":" + st.port + "/?t=" + st.token;
   var Modal = require("obsidian").Modal;
   var modal = new Modal(app);
+  modal.modalEl.style.width = "380px";
+  modal.modalEl.style.maxWidth = "92vw";
   modal.titleEl.setText("扫码导入 · 灵感库");
   var el = modal.contentEl;
   el.empty();
+  el.style.textAlign = "center";
   var p1 = el.createEl("p", { text: "用手机扫描二维码，打开表单填写并发送；电脑端会自动写入 inspirations/。" });
   p1.style.cssText = "color:var(--text-muted);font-size:12.5px;line-height:1.6;margin:0 0 12px";
   var box = el.createDiv();
-  box.style.cssText = "background:#fff;padding:12px;border-radius:12px;display:inline-block;line-height:0";
+  box.style.cssText = "background:#fff;padding:12px;border-radius:12px;display:block;width:max-content;margin:0 auto;line-height:0";
   box.innerHTML = __tideQrSvg(url, 260);
   var u = el.createDiv({ text: url });
   u.style.cssText = "font-size:11.5px;color:var(--text-faint);word-break:break-all;margin:10px 0 4px";

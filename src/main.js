@@ -19483,8 +19483,8 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .page-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; margin-bottom: 18px; }
 .neural .qr-import-btn { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255, 255, 255, .04); color: var(--text); font-size: 13px; cursor: pointer; }
 .neural .qr-import-btn:hover { background: rgba(255, 255, 255, .09); }
-.neural-view { height: 100%; }
-.neural-view .neural { min-height: 100%; min-height: 100dvh; }
+.neural-view { height: 100%; display: flex; flex-direction: column; }
+.neural-view .neural { flex: 1 1 auto; min-height: 100%; min-height: 100dvh; }
 .neural .page-head h1 { margin: 0; font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: .02em; }
 .neural .page-sub { margin: 6px 0 0; color: var(--text-2); font-size: 13.5px; }
 .neural .toolbar-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
@@ -19492,6 +19492,7 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .search svg { position: absolute; left: 14px; }
 .neural .search input { width: 100%; height: 38px; padding: 0 14px 0 38px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, .05); outline: none; }
 .neural .search input:focus-visible { border-color: rgba(230, 207, 152, .45); }
+.neural .toolbar-row .seg { margin-left: auto; }
 .neural .seg { display: flex; gap: 2px; padding: 3px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); }
 .neural .seg button { border: 0; background: none; color: var(--text-2); padding: 5px 12px; border-radius: 999px; font-size: 12px; }
 .neural .seg button.active { background: rgba(236, 236, 232, .12); color: #f4f4f1; box-shadow: inset 0 0 0 1px rgba(236, 236, 232, .26); }
@@ -20835,6 +20836,8 @@ var Ec = "neural-dashboard-view",
         console.error("[neural-dashboard] vault 扫描失败：", e);
       }
       this.contentEl.classList.add("neural-view");
+      this.containerEl.style.height = "100%";
+      this.containerEl.style.background = "#0d0e0e";
       this.contentEl.style.height = "100%";
       this.contentEl.style.minHeight = "100dvh";
       this.contentEl.style.background = "#0d0e0e";

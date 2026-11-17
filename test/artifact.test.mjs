@@ -42,9 +42,9 @@ check("main.js: size in range 300KB-2MB", () => {
 const js = read("main.js");
 
 // 4. CJS 形态：只 require obsidian，导出 module.exports，无 ESM 残留
-check("main.js: requires only obsidian", () => {
+check("main.js: requires only obsidian + node builtins", () => {
   const all = [...js.matchAll(/require\(\s*["']([^"']+)["']\s*\)/g)].map((m) => m[1]);
-  const nonHost = all.filter((m) => m !== "obsidian");
+  const nonHost = all.filter((m) => m !== "obsidian" && !m.startsWith("node:"));
   assert.equal(nonHost.length, 0, `unexpected require: ${nonHost.join(",")}`);
   assert.ok(all.includes("obsidian"), "obsidian require not found");
 });

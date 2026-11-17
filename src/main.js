@@ -15542,7 +15542,7 @@ function bc(t, e, n) {
         title: r.short,
         en: "Next step",
         text: s.length
-          ? `可以延伸 ${s.length} 条资源，共享：${[...new Set(s.flatMap((f) => f.via))].slice(0, 4).join("、")}`
+          ? `可以延伸 ${s.length} 条灵感，共享：${[...new Set(s.flatMap((f) => f.via))].slice(0, 4).join("、")}`
           : "暂未与项目条目共享概念，可补充正文后再看。",
         items: [r.id, ...s.slice(0, 3).map((f) => f.id)],
       });
@@ -16487,7 +16487,7 @@ function k2(t, e) {
             : h.length
               ? ["中", "Fair", "mid"]
               : ["弱", "Weak", "low"],
-        delta: `${h.length} 条资源`,
+        delta: `${h.length} 条灵感`,
         deltaEn: "related resources",
         bars: p.map((v) => ({ v: d(v), on: v === e, label: v.short })),
       },
@@ -18192,7 +18192,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
     M = new Set(nn.map((h) => l1(t.index.get("post:" + h.id))).filter(Boolean)),
     p = nn.filter((h) => r(h, "待读")).length,
     d = [
-      ["灵感总数", "Projects", nn.length],
+      ["灵感总数", "Inspirations", nn.length],
       ["分类数", "Categories", M.size],
       ["本月新增", "Added", w],
       ["待读", "To read", p],
@@ -18249,7 +18249,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
                       (0, z.jsx)("input", {
                         value: i,
                         onChange: (h) => u(h.target.value),
-                        placeholder: "搜索项目… Search projects",
+                        placeholder: "搜索灵感… Search inspirations",
                         "aria-label": "搜索资源",
                       }),
                     ],
@@ -18379,7 +18379,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
                     (0, z.jsx)(X, { name: "search", size: 30 }),
                     (0, z.jsxs)("p", {
                       children: [
-                        "没有找到这条资源 ",
+                        "没有找到这条灵感 ",
                         (0, z.jsx)("em", { children: "No match" }),
                       ],
                     }),
@@ -18398,7 +18398,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
                 children: [
                   (0, z.jsx)(X, { name: "info", size: 13 }),
                   nn.length,
-                  " 条资源来自",
+                  " 条灵感来自",
                   Vf.source,
                   "；「—」表示未标注 ",
                   (0, z.jsx)("em", { children: "Not tagged" }),
@@ -19032,7 +19032,7 @@ function r1({ graph: t, ideas: e, onEdit: n, onNew: a, onGraph: l }) {
                                   children: [
                                     "关联 ",
                                     b.length,
-                                    " 条资源 ",
+                                    " 条灵感 ",
                                     (0, z.jsxs)("em", {
                                       children: [
                                         "linked to ",
@@ -19484,7 +19484,7 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .qr-import-btn { display: inline-flex; align-items: center; height: 34px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--line); background: rgba(255, 255, 255, .04); color: var(--text); font-size: 13px; cursor: pointer; }
 .neural .qr-import-btn:hover { background: rgba(255, 255, 255, .09); }
 .neural-view { height: 100%; }
-.neural-view .neural { min-height: 100%; }
+.neural-view .neural { min-height: 100%; min-height: 100dvh; }
 .neural .page-head h1 { margin: 0; font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: .02em; }
 .neural .page-sub { margin: 6px 0 0; color: var(--text-2); font-size: 13.5px; }
 .neural .toolbar-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
@@ -19843,7 +19843,7 @@ function F2({
   var r;
   let o = Jn.filter((s) => s.views === 0 && s.saves === 0).length,
     c = [
-      ["灵感总数", "Projects", Jn.length],
+      ["灵感总数", "Inspirations", Jn.length],
       ["本月新增", "Added", ui.length],
       ["待读", "To read", o],
       ["索引 · 记忆库", "Index", n.length + a.length],
@@ -20836,6 +20836,7 @@ var Ec = "neural-dashboard-view",
       }
       this.contentEl.classList.add("neural-view");
       this.contentEl.style.height = "100%";
+      this.contentEl.style.minHeight = "100dvh";
       this.contentEl.style.background = "#0d0e0e";
       return zc(this.contentEl, this.plugin.mountContext());
     }

@@ -20835,6 +20835,8 @@ var Ec = "neural-dashboard-view",
         console.error("[neural-dashboard] vault 扫描失败：", e);
       }
       this.contentEl.classList.add("neural-view");
+      this.contentEl.style.height = "100%";
+      this.contentEl.style.background = "#0d0e0e";
       return zc(this.contentEl, this.plugin.mountContext());
     }
     async onClose() {

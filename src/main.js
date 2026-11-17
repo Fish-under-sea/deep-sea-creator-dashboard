@@ -18234,7 +18234,7 @@ function o1({ graph: t, selected: e, setSelected: n, onGo: a, onAction: l }) {
         ),
       }),
       (0, z.jsxs)("div", {
-        className: "library-layout",
+        className: g ? "library-layout" : "library-layout no-detail",
         children: [
           (0, z.jsxs)("section", {
             className: "works-col",
@@ -19488,7 +19488,7 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 .neural .page-head h1 { margin: 0; font-size: clamp(26px, 2.6vw, 36px); font-weight: 600; letter-spacing: .02em; }
 .neural .page-sub { margin: 6px 0 0; color: var(--text-2); font-size: 13.5px; }
 .neural .toolbar-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 14px; }
-.neural .search { position: relative; display: flex; align-items: center; flex: 1; min-width: 220px; max-width: 360px; color: var(--text-2); }
+.neural .search { position: relative; display: flex; align-items: center; flex: 1; min-width: 220px; color: var(--text-2); }
 .neural .search svg { position: absolute; left: 14px; }
 .neural .search input { width: 100%; height: 38px; padding: 0 14px 0 38px; border-radius: 999px; border: 1px solid var(--line-2); background: rgba(255, 255, 255, .05); outline: none; }
 .neural .search input:focus-visible { border-color: rgba(230, 207, 152, .45); }
@@ -19505,6 +19505,7 @@ var K2 = `/* 由 obsidian-plugin/postcss-scope.mjs 自动生成，请勿手工�
 /* 灵感库 */
 .neural .page-library .kpi-band { margin-top: 0; }
 .neural .library-layout { display: grid; grid-template-columns: 1fr clamp(380px, 32vw, 460px); gap: 20px; align-items: start; }
+.neural .library-layout.no-detail { grid-template-columns: 1fr; }
 .neural .library-analysis { position: sticky; top: 80px; height: calc(100vh - 100px); height: calc(100dvh - 100px); animation: nd-slideIn .6s cubic-bezier(.2, .8, .2, 1) both; }
 .neural .works-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 14px; }
 .neural .work-card { display: grid; grid-template-rows: auto 1fr; padding: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: linear-gradient(170deg, rgba(48, 49, 48, .55), rgba(14, 15, 15, .82)); text-align: left; color: var(--text); transition: transform .3s, border-color .3s, box-shadow .3s; animation: nd-fadeUp .55s both; }
